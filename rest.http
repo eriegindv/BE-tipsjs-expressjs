@@ -1,0 +1,13 @@
+GET http://localhost:3001
+
+###
+POST http://localhost:3001/user/register
+
+###
+POST http://localhost:3001/user/refresh-token
+
+###
+POST http://localhost:3001/user/login
+
+###
+POST http://localhost:3001/user/logout
