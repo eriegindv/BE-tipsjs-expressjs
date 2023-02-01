@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 function newConnection(uri) {
   const conn = mongoose.createConnection(uri);

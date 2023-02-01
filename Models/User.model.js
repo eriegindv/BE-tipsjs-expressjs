@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
-const schema = new mongoose.Schema();
-
 const { testConnection } = require("../helpers/connections_multi_mongodb");
 
-const UserSchema = new schema({
+const Schema = mongoose.Schema;
+
+const UserSchema = new Schema({
   username: {
     type: String,
     lowercase: true,

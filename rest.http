@@ -2,6 +2,12 @@ GET http://localhost:3001
 
 ###
 POST http://localhost:3001/user/register
+Content-Type: application/json
+
+{
+  "email": "ERIEgin@gmail.com",
+  "password": "abc123"
+}
 
 ###
 POST http://localhost:3001/user/refresh-token
