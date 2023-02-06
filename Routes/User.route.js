@@ -17,17 +17,19 @@ route.post("/register", async (req, res, next) => {
     //   throw createError.BadRequest();
     // }
 
-    const isEmailExist = await User.findOne({ username: email });
+    const isEmailExist = await User.findOne({ email });
     if (isEmailExist) {
       throw createError.Conflict(`${email} is already been registered`);
     }
 
-    const isCreate = await User.create({
-      username: email,
+    const user = new User({
+      email,
       password,
     });
 
-    return res.json({ status: "okay", elements: isCreate });
+    const savedUser = await user.save();
+
+    return res.json({ status: "okay", elements: savedUser });
   } catch (error) {
     next(error);
   }
