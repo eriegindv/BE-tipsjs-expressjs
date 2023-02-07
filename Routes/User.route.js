@@ -6,6 +6,7 @@ const {
   signAccessToken,
   verifyAccessToken,
   signRefreshToken,
+  verifyRefreshToken,
 } = require("../helpers/jwt_service");
 
 const route = express.Router();
@@ -37,8 +38,19 @@ route.post("/register", async (req, res, next) => {
   }
 });
 
-route.post("/refresh-token", (req, res, next) => {
-  res.send("function refresh-token");
+route.post("/refresh-token", async (req, res, next) => {
+  try {
+    const { refreshToken } = req.body;
+    if (!refreshToken) throw createError.BadRequest();
+
+    const { userId } = await verifyRefreshToken(refreshToken);
+    const accessToken = await signAccessToken(userId);
+    const newRefreshToken = await signRefreshToken(userId);
+
+    res.json({ accessToken, newRefreshToken });
+  } catch (error) {
+    next(error);
+  }
 });
 
 route.post("/login", async (req, res, next) => {
