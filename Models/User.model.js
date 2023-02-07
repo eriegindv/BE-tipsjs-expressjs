@@ -32,7 +32,6 @@ UserSchema.pre("save", async function (next) {
 
 UserSchema.methods.isCheckPassword = async function (password) {
   try {
-    console.log(this);
     return await bcrypt.compare(password, this.password);
   } catch (error) {
     next(error);
