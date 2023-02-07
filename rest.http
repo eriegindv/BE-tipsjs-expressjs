@@ -5,7 +5,7 @@ POST http://localhost:3001/user/register
 Content-Type: application/json
 
 {
-  "email": "eriegin1@gmail.com",
+  "email": "ERIEgin@gmail.com",
   "password": "abc123"
 }
 
@@ -14,6 +14,12 @@ POST http://localhost:3001/user/refresh-token
 
 ###
 POST http://localhost:3001/user/login
+Content-Type: application/json
+
+{
+  "email": "ERIEgin1@gmail.com",
+  "password": "abc1234"
+}
 
 ###
 POST http://localhost:3001/user/logout

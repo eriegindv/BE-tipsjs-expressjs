@@ -13,9 +13,6 @@ route.post("/register", async (req, res, next) => {
     if (error) {
       throw createError(error.details[0].message);
     }
-    // if (!email || !password) {
-    //   throw createError.BadRequest();
-    // }
 
     const isEmailExist = await User.findOne({ email });
     if (isEmailExist) {
@@ -39,8 +36,23 @@ route.post("/refresh-token", (req, res, next) => {
   res.send("function refresh-token");
 });
 
-route.post("/login", (req, res, next) => {
-  res.send("function login");
+route.post("/login", async (req, res, next) => {
+  try {
+    const { error } = userValidate(req.body);
+    if (error) throw createError(error.details[0].message);
+
+    const { email, password } = req.body;
+
+    const user = await User.findOne({ email });
+    if (!user) throw createError.NotFound("User not registered");
+
+    const isValid = await user.isCheckPassword(password);
+    if (!isValid) throw createError.Unauthorized();
+
+    res.send(user);
+  } catch (error) {
+    next(error);
+  }
 });
 
 route.post("/logout", (req, res, next) => {

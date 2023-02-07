@@ -17,6 +17,7 @@ const UserSchema = new Schema({
   },
 });
 
+// 'this' is 'user' in the database
 UserSchema.pre("save", async function (next) {
   try {
     console.log(`Called before save::::`, this.email, this.password);
@@ -28,5 +29,14 @@ UserSchema.pre("save", async function (next) {
     next(error);
   }
 });
+
+UserSchema.methods.isCheckPassword = async function (password) {
+  try {
+    console.log(this);
+    return await bcrypt.compare(password, this.password);
+  } catch (error) {
+    next(error);
+  }
+};
 
 module.exports = testConnection.model("user", UserSchema);
