@@ -8,6 +8,7 @@ const {
   signRefreshToken,
   verifyRefreshToken,
 } = require("../helpers/jwt_service");
+const { client } = require("../helpers/connections_redis");
 
 const route = express.Router();
 
@@ -74,8 +75,18 @@ route.post("/login", async (req, res, next) => {
   }
 });
 
-route.post("/logout", (req, res, next) => {
-  res.send("function logout");
+route.delete("/logout", async (req, res, next) => {
+  try {
+    const { refreshToken } = req.body;
+    if (!refreshToken) throw createError.BadRequest();
+
+    const { userId } = await verifyRefreshToken(refreshToken);
+
+    const reply = await client.del(userId.toString());
+    res.json({ message: "Logout" });
+  } catch (error) {
+    next(error);
+  }
 });
 
 route.get("/getlists", verifyAccessToken, (req, res, next) => {

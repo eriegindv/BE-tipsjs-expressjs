@@ -14,7 +14,7 @@ POST http://localhost:3001/user/refresh-token
 Content-Type: application/json
 
 {
-  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2UwZDI5ZmY5OTdjMjQ5MzZhMzYwMGIiLCJpYXQiOjE2NzU3NTc1NDAsImV4cCI6MTcwNzMxNTE0MH0.vfpohuwLfQA4E7BB1akbexBWiwEbfo1flgVA03iMLbE"
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2UwZDI5ZmY5OTdjMjQ5MzZhMzYwMGIiLCJpYXQiOjE2NzU3NTgzNDYsImV4cCI6MTcwNzMxNTk0Nn0.aRvXr5FImQQ8SDYmt9hcFkvVhk29Z1LWpEq8zwWTaZE"
 }
 
 ###
@@ -27,7 +27,12 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3001/user/logout
+DELETE http://localhost:3001/user/logout
+Content-Type: application/json
+
+{
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2UwZDI5ZmY5OTdjMjQ5MzZhMzYwMGIiLCJpYXQiOjE2NzU3NTg5NDQsImV4cCI6MTcwNzMxNjU0NH0.dmHBAaVmho8WvMe5_7R_n5tzYCrNVpInw7PItYCSVeI"
+}
 
 ###
 GET http://localhost:3001/user/getlists
