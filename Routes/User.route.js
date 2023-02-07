@@ -2,7 +2,11 @@ const express = require("express");
 const User = require("../Models/User.model");
 const createError = require("http-errors");
 const { userValidate } = require("../helpers/validation");
-const { signAccessToken } = require("../helpers/jwt_service");
+const {
+  signAccessToken,
+  verifyAccessToken,
+  signRefreshToken,
+} = require("../helpers/jwt_service");
 
 const route = express.Router();
 
@@ -51,7 +55,8 @@ route.post("/login", async (req, res, next) => {
     if (!isValid) throw createError.Unauthorized();
 
     const accessToken = await signAccessToken(user._id);
-    res.json({ accessToken });
+    const refreshToken = await signRefreshToken(user._id);
+    res.json({ accessToken, refreshToken });
   } catch (error) {
     next(error);
   }
@@ -59,6 +64,12 @@ route.post("/login", async (req, res, next) => {
 
 route.post("/logout", (req, res, next) => {
   res.send("function logout");
+});
+
+route.get("/getlists", verifyAccessToken, (req, res, next) => {
+  const listUsers = [{ email: "abc@gmail.com" }, { email: "def@gmail.com" }];
+
+  res.json({ listUsers });
 });
 
 module.exports = route;

@@ -17,9 +17,13 @@ POST http://localhost:3001/user/login
 Content-Type: application/json
 
 {
-  "email": "ERIEgin1@gmail.com",
-  "password": "abc1234"
+  "email": "eriegin@gmail.com",
+  "password": "abc123"
 }
 
 ###
 POST http://localhost:3001/user/logout
+
+###
+GET http://localhost:3001/user/getlists
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2UwZDI5ZmY5OTdjMjQ5MzZhMzYwMGIiLCJpYXQiOjE2NzU3NDE2OTYsImV4cCI6MTY3NTc0NTI5Nn0.ZcAEwoYt3fS_tYaXVNaShF4Baz3IOwflZUNRedlBec0
