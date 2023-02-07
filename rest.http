@@ -14,7 +14,7 @@ POST http://localhost:3001/user/refresh-token
 Content-Type: application/json
 
 {
-  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2UwZDI5ZmY5OTdjMjQ5MzZhMzYwMGIiLCJpYXQiOjE2NzU3NTU0MDYsImV4cCI6MTcwNzMxMzAwNn0.TZ23XXcqR57cH6_MM-S9QKDcwnDEbO_gdBZnSg0fajw"
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2UwZDI5ZmY5OTdjMjQ5MzZhMzYwMGIiLCJpYXQiOjE2NzU3NTc1NDAsImV4cCI6MTcwNzMxNTE0MH0.vfpohuwLfQA4E7BB1akbexBWiwEbfo1flgVA03iMLbE"
 }
 
 ###
