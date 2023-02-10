@@ -26,6 +26,18 @@ const getKey = async (key) => {
   return await client.get(key);
 };
 
+const incr = async (key) => {
+  return await client.incr(key);
+};
+
+const expire = async (key, ttl) => {
+  return await client.expire(key, ttl);
+};
+
+const ttl = async (key) => {
+  return await client.ttl(key);
+};
+
 bootstrap();
 
-module.exports = { client, setKey, getKey };
+module.exports = { client, setKey, getKey, incr, expire, ttl };
