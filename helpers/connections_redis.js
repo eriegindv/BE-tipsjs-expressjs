@@ -13,13 +13,10 @@ const bootstrap = async () => {
 
   const ping = await client.ping();
   console.log(ping);
-
-  const foo = await getKey("foo");
-  console.log(foo);
 };
 
-const setKey = async (key, value) => {
-  await client.set(key, value);
+const setKey = async (key, value, options = {}) => {
+  await client.set(key, value, options);
 };
 
 const getKey = async (key) => {
@@ -28,6 +25,14 @@ const getKey = async (key) => {
 
 const incr = async (key) => {
   return await client.incr(key);
+};
+
+const incrBy = async (key, amount) => {
+  return await client.incrBy(key, amount);
+};
+
+const decrBy = async (key, amount) => {
+  return await client.decrBy(key, amount);
 };
 
 const expire = async (key, ttl) => {
@@ -40,4 +45,13 @@ const ttl = async (key) => {
 
 bootstrap();
 
-module.exports = { client, setKey, getKey, incr, expire, ttl };
+module.exports = {
+  client,
+  setKey,
+  getKey,
+  incr,
+  expire,
+  ttl,
+  incrBy,
+  decrBy,
+};

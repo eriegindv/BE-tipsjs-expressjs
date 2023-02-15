@@ -37,3 +37,9 @@ Content-Type: application/json
 ###
 GET http://localhost:3001/user/getlists
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2UwZDI5ZmY5OTdjMjQ5MzZhMzYwMGIiLCJpYXQiOjE2NzU3NTYwNDgsImV4cCI6MTY3NTc1NjA2OH0.AhBVklyR59HJr4T0U6JkbTYfcr7DqoM_jqlpN-uJCzc
+
+###
+GET http://localhost:3001/limit
+
+###
+GET http://localhost:3001/order

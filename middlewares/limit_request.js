@@ -1,6 +1,6 @@
 const { expire, incr, ttl } = require("../helpers/connections_redis");
 
-const preventRequest = async (req, res, next) => {
+const limitRequest = async (req, res, next) => {
   try {
     // get ip
     const getIPUser = "128.0.0.1";
@@ -30,4 +30,4 @@ const preventRequest = async (req, res, next) => {
   }
 };
 
-module.exports = preventRequest;
+module.exports = limitRequest;
