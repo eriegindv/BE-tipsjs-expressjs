@@ -1,9 +1,4 @@
-const {
-  setNX,
-  incrBy,
-  setKey,
-  getKey,
-} = require("../helpers/connections_redis");
+const { incrBy, setKey, getKey } = require("../helpers/connections_redis");
 
 const order = async (req, res) => {
   const time = new Date().getTime();
@@ -42,4 +37,16 @@ const order = async (req, res) => {
   res.json({ status: "success", message: "OK", time });
 };
 
-module.exports = { order };
+const cancelExpiration = async (req, res) => {
+  try {
+    const { userId, order } = req.body;
+
+    await setKey(order.id, "Cancel order", { EX: 3 });
+
+    res.json({ status: "success", message: order });
+  } catch (error) {
+    next(error);
+  }
+};
+
+module.exports = { order, cancelExpiration };
