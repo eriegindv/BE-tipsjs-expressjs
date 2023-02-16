@@ -1,5 +1,5 @@
 const express = require("express");
-const limitRequest = require("../middlewares/limit_request");
+const limitRequest = require("../../middlewares/limit_request");
 
 const route = express.Router();
 

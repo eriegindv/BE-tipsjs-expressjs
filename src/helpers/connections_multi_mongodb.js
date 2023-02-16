@@ -21,9 +21,9 @@ function newConnection(uri) {
 
 // make connection to DB test
 const testConnection = newConnection(process.env.URI_MONGODB_TEST);
-const UserConnection = newConnection(process.env.URI_MONGODB_USERS);
+const userConnection = newConnection(process.env.URI_MONGODB_USERS);
 
 module.exports = {
   testConnection,
-  UserConnection,
+  userConnection,
 };

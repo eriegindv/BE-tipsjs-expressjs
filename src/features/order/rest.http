@@ -1,0 +1,19 @@
+###
+GET http://localhost:4000/order
+
+###
+POST http://localhost:4000/order/expiration-order
+Content-Type: application/json
+
+{
+  "userId": 111,
+  "order": {
+    "id": "abcxyz",
+    "products": [
+      {
+        "name": "iPhone13",
+        "price": 1000
+      }
+    ]
+  }
+}

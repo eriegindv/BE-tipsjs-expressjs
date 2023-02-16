@@ -38,4 +38,4 @@ UserSchema.methods.isCheckPassword = async function (password) {
   }
 };
 
-module.exports = testConnection.model("user", UserSchema);
+module.exports = testConnection.model("User", UserSchema);

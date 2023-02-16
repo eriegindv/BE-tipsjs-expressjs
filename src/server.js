@@ -1,8 +1,9 @@
 const express = require("express");
 const createError = require("http-errors");
-const userRoute = require("./authorization/user.route");
-const limitRoute = require("./limit-request/limit.route");
-const orderRoute = require("./order/order.route");
+const userRoute = require("./features/authorization/user.route");
+const limitRoute = require("./features/limit-request/limit.route");
+const orderRoute = require("./features/order/order.route");
+const moneyTransactionRoute = require("./features/money-transaction/money-transaction.route");
 
 require("dotenv").config();
 
@@ -15,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/limit", limitRoute);
 app.use("/order", orderRoute);
 app.use("/user", userRoute);
+app.use("/money-transaction", moneyTransactionRoute);
 
 app.use((req, res, next) => {
   next(createError.NotFound("This route does not exist"));
