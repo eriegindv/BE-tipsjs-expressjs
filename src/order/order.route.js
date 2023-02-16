@@ -1,5 +1,5 @@
 const express = require("express");
-const { order, cancelExpiration } = require("../Controllers/Order.controller");
+const { order, cancelExpiration } = require("./order.controller");
 
 const route = express.Router();
 
