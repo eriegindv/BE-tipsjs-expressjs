@@ -1,12 +1,12 @@
 const User = require("./user.model");
 const createError = require("http-errors");
-const { userValidate } = require("../helpers/validation");
+const { userValidate } = require("../../helpers/validation");
 const {
   signAccessToken,
   signRefreshToken,
   verifyRefreshToken,
-} = require("../helpers/jwt_service");
-const { client } = require("../helpers/connections_redis");
+} = require("../../helpers/jwt_service");
+const { client } = require("../../helpers/connections_redis");
 
 const userController = {
   register: async (req, res, next) => {

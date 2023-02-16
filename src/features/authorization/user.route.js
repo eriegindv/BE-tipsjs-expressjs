@@ -1,5 +1,5 @@
 const express = require("express");
-const { verifyAccessToken } = require("../helpers/jwt_service");
+const { verifyAccessToken } = require("../../helpers/jwt_service");
 const {
   register,
   refreshToken,

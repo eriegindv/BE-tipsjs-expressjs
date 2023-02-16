@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { testConnection } = require("../helpers/connections_multi_mongodb");
+const { testConnection } = require("../../helpers/connections_multi_mongodb");
 const bcrypt = require("bcrypt");
 
 const Schema = mongoose.Schema;
