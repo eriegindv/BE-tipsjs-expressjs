@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/server.js",
-    "dev-authorization": "nodemon src/features/authorization/server.js",
-    "dev-limit-request": "nodemon src/features/limit-request/server.js",
-    "dev-money-transaction": "nodemon src/features/money-transaction/server.js",
-    "dev-order": "nodemon src/features/order/server.js",
-    "dev-session": "nodemon src/features/session/server.js"
+    "dev": "nodemon src/v1/server.js",
+    "dev-authorization": "nodemon src/v1/features/authorization/server.js",
+    "dev-limit-request": "nodemon src/v1/features/limit-request/server.js",
+    "dev-money-transaction": "nodemon src/v1/features/money-transaction/server.js",
+    "dev-order": "nodemon src/v1/features/order/server.js",
+    "dev-session": "nodemon src/v1/features/session/server.js"
   },
   "keywords": [],
   "author": "",
