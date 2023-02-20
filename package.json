@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon src/server.js",
+    "dev-authorization": "nodemon src/features/authorization/server.js",
+    "dev-limit-request": "nodemon src/features/limit-request/server.js",
+    "dev-money-transaction": "nodemon src/features/money-transaction/server.js",
+    "dev-order": "nodemon src/features/order/server.js"
   },
   "keywords": [],
   "author": "",
