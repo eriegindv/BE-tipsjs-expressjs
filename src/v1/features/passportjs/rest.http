@@ -1,0 +1,14 @@
+###
+GET http://localhost:4000/passportjs/status
+
+###
+GET http://localhost:4000/passportjs/profile
+
+###
+POST http://localhost:4000/passportjs/login
+Content-Type: application/json
+
+{
+  "username": "user",
+  "password": "123"
+}
