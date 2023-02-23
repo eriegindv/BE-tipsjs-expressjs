@@ -4,7 +4,7 @@ const userRoute = require("./features/authorization/user.route");
 const limitRoute = require("./features/limit-request/limit.route");
 const orderRoute = require("./features/order/order.route");
 const moneyTransactionRoute = require("./features/money-transaction/money-transaction.route");
-const sessionRoute = require("./features/session/session.route");
+const passportjsRoute = require("./features/passportjs/passportjs.route");
 
 require("dotenv").config();
 
@@ -19,6 +19,7 @@ app.use("/order", orderRoute);
 app.use("/user", userRoute);
 app.use("/money-transaction", moneyTransactionRoute);
 app.use("/session", sessionRoute);
+app.use("/passportjs", passportjsRoute);
 
 app.use((req, res, next) => {
   next(createError.NotFound("This route does not exist"));

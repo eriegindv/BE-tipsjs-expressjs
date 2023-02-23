@@ -11,7 +11,8 @@
     "dev-money-transaction": "nodemon src/v1/features/money-transaction/server.js",
     "dev-order": "nodemon src/v1/features/order/server.js",
     "dev-session": "nodemon src/v1/features/session/server.js",
-    "dev-passportjs": "nodemon src/v1/features/passportjs/server.js"
+    "dev-passportjs": "nodemon src/v1/features/passportjs/server.js",
+    "dev-socket": "nodemon src/v1/features/socket/server.js"
   },
   "keywords": [],
   "author": "",
@@ -29,7 +30,8 @@
     "mongoose": "^6.9.0",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
-    "redis": "^4.6.4"
+    "redis": "^4.6.4",
+    "socket.io": "^4.6.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
