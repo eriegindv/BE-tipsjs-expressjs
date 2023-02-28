@@ -19,7 +19,6 @@ const productSchema = new mongoose.Schema(
 const cartSchema = new mongoose.Schema(
   {
     userId: Number,
-    cartId: Number,
     status: { type: String, default: "active" },
     modifiedOn: { type: Date, default: Date.now },
     products: Array,
@@ -50,7 +49,6 @@ const inventorySchema = new mongoose.Schema(
     productId: Number,
     quantity: Number,
     reservations: Array,
-    created_at: { type: Date, default: Date.now },
   },
   {
     collection: "inventories",
