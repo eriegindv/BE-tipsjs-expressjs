@@ -12,7 +12,8 @@
     "dev-order": "nodemon src/v1/features/order/server.js",
     "dev-session": "nodemon src/v1/features/session/server.js",
     "dev-passportjs": "nodemon src/v1/features/passportjs/server.js",
-    "dev-socket": "nodemon src/v1/features/socket/server.js"
+    "dev-socket": "nodemon src/v1/features/socket/server.js",
+    "dev-v2": "nodemon src/v2/server.js"
   },
   "keywords": [],
   "author": "",
