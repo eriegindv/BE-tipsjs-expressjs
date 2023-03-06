@@ -1,5 +1,5 @@
 ###
-GET http://localhost:4000/order
+GET http://localhost:4000/order/concurrence-order
 
 ###
 POST http://localhost:4000/order/expiration-order
