@@ -14,12 +14,14 @@
     "dev-passportjs": "nodemon src/v1/features/passportjs/server.js",
     "dev-socket": "nodemon src/v1/features/socket/server.js",
     "dev-replay-attack": "nodemon src/v1/features/replay-attack/server.js",
+    "dev-rabbitmq": "nodemon src/v1/features/rabbitmq/queue/producer.js",
     "dev-v2": "nodemon src/v2/server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "amqplib": "^0.10.3",
     "bcrypt": "^5.1.0",
     "connect-redis": "^6.1.3",
     "cors": "^2.8.5",
